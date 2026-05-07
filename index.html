@@ -110,11 +110,12 @@
 
   /* HERO */
   .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 3rem 4rem;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 4rem;
+    padding: 8rem 3rem 5rem;
     position: relative;
     overflow: hidden;
   }
@@ -141,11 +142,8 @@
 
   /* Placeholder image area in hero */
   .hero-img-placeholder {
-    position: absolute;
-    bottom: 4rem;
-    right: 3rem;
-    width: 28vw;
-    max-width: 400px;
+    position: relative;
+    width: 280px;
     aspect-ratio: 4/5;
     background: var(--gray);
     border: 1px solid var(--gray-mid);
@@ -165,7 +163,6 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 55%;
   }
 
   .hero-eyebrow {
@@ -684,11 +681,6 @@
   <div class="hero-bg"></div>
   <div class="hero-reel"></div>
 
-  <div class="hero-img-placeholder">
-    <span>▶</span>
-    Tu foto / foto principal aquí
-  </div>
-
   <div class="hero-content">
     <p class="hero-eyebrow">Visual Storyteller · Monterrey</p>
     <h1 class="hero-title">
@@ -699,6 +691,11 @@
       Capturo historias en movimiento — hazañas, vidas, recuerdos.
     </p>
     <a href="#video" class="hero-cta">Ver trabajo →</a>
+  </div>
+
+  <div class="hero-img-placeholder">
+    <span>▶</span>
+    Tu foto / foto principal aquí
   </div>
 
   <div class="scroll-hint">

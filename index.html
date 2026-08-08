@@ -528,6 +528,26 @@
   }
   .foto-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
 
+  /* Señal de ampliar al pasar el mouse */
+  .foto-item::after {
+    content: '⤢ Ampliar';
+    position: absolute;
+    bottom: 1rem; right: 1rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: rgba(8,8,8,0.55);
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 0.7rem;
+    border: 1px solid rgba(240,237,232,0.25);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  .foto-item:hover::after { opacity: 1; transform: translateY(0); }
+
   .foto-item-label {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -874,6 +894,7 @@
     .video-pair,
     .video-pair.is-trio { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .foto-grid { grid-template-columns: repeat(2, 1fr); }
+    .foto-item::after { opacity: 0.9; transform: none; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .athletes-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-headline { font-size: 3rem; }
@@ -895,7 +916,8 @@
     <li><a href="#about">Sobre mí</a></li>
     <li><a href="#marcas">Clientes</a></li>
     <li><a href="#contacto">Contacto</a></li>
-    <li><a href="otros.html" class="nav-otros">Otros proyectos ↗</a></li>
+    <!-- Más allá del deporte — OCULTO por ahora. Para reactivar, quita los comentarios de la línea de abajo -->
+    <!-- <li><a href="otros.html" class="nav-otros">Más allá del deporte ↗</a></li> -->
   </ul>
 </nav>
 

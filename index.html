@@ -111,10 +111,7 @@
   /* HERO */
   .hero {
     min-height: auto;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 4rem;
+    display: block;
     padding: 8rem 3rem 5rem;
     position: relative;
     overflow: hidden;
@@ -649,52 +646,45 @@
     overflow: hidden;
     border-top: 1px solid var(--gray-mid);
     border-bottom: 1px solid var(--gray-mid);
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     margin-bottom: 3.5rem;
   }
 
-  /* LOGOS GRID */
-  .logos-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1px;
-    background: var(--gray-mid);
-    border: 1px solid var(--gray-mid);
-  }
-  .logo-cell {
-    background: var(--black);
-    aspect-ratio: 3/2;
+  /* LOGOS EN EL TICKER */
+  .ticker-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
-    transition: background 0.3s ease;
+    flex-shrink: 0;
   }
-  .logo-cell:hover { background: var(--gray); }
-  .logo-cell img {
-    max-width: 100%;
-    max-height: 44px;
+  .ticker-logo img {
+    max-height: 46px;
+    max-width: 150px;
+    width: auto;
     object-fit: contain;
     opacity: 0.55;
     filter: grayscale(100%) brightness(0) invert(1);
     transition: opacity 0.3s ease;
   }
-  .logo-cell:hover img { opacity: 1; }
-  /* Placeholder de logo */
-  .logo-cell .logo-empty {
-    font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--gray-light); opacity: 0.4; text-align: center;
-  }
-  @media (max-width: 780px) {
-    .logos-grid { grid-template-columns: repeat(2, 1fr); }
+  .ticker-logo:hover img { opacity: 1; }
+
+  .ticker-otros {
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    color: var(--gray-light);
+    opacity: 0.5;
+    text-transform: lowercase;
+    font-style: italic;
   }
 
   .ticker {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     width: max-content;
-    animation: ticker 20s linear infinite;
+    animation: ticker 30s linear infinite;
     white-space: nowrap;
   }
 
@@ -703,21 +693,6 @@
   @keyframes ticker {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
-  }
-
-  .ticker-item {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    letter-spacing: 0.08em;
-    color: var(--gray-light);
-    transition: color 0.2s;
-  }
-
-  .ticker-item:hover { color: var(--white); }
-
-  .ticker-sep {
-    color: var(--gray-mid);
-    font-size: 1.5rem;
   }
 
   /* Athletes */
@@ -904,11 +879,6 @@
       Capturo historias en movimiento — hazañas, vidas, recuerdos.
     </p>
     <a href="#video" class="hero-cta">Ver trabajo →</a>
-  </div>
-
-  <div class="hero-img-placeholder">
-    <span>▶</span>
-    Tu foto / foto principal aquí
   </div>
 
   <div class="scroll-hint">
@@ -1134,62 +1104,30 @@
 
   <div class="ticker-wrap">
     <div class="ticker">
-      <span class="ticker-item">HYROX</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">LULULEMON</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">SAUCONY</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">OPTIMUM NUTRITION</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">CF MONTERREY</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">OUM</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">ATLESIA</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">LA MEMENTÍSA</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">HIIVER</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">AÉREO</span>
-      <span class="ticker-sep">·</span>
+      <span class="ticker-logo"><img src="logos/hyrox.png" alt="Hyrox" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/lululemon.png" alt="lululemon" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/saucony.png" alt="Saucony" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/optimum-nutrition.png" alt="Optimum Nutrition" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/cf-monterrey.png" alt="CF Monterrey" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/oum.png" alt="OUM" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/atlesia.png" alt="Atlesia" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/la-mementisa.png" alt="La Mementísa" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/hiiver.png" alt="Hiiver" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/aereo.png" alt="Aéreo" loading="lazy"></span>
+      <span class="ticker-otros">entre otros</span>
       <!-- duplicate for seamless loop -->
-      <span class="ticker-item">HYROX</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">LULULEMON</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">SAUCONY</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">OPTIMUM NUTRITION</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">CF MONTERREY</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">OUM</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">ATLESIA</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">LA MEMENTÍSA</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">HIIVER</span>
-      <span class="ticker-sep">·</span>
-      <span class="ticker-item">AÉREO</span>
-      <span class="ticker-sep">·</span>
+      <span class="ticker-logo"><img src="logos/hyrox.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/lululemon.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/saucony.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/optimum-nutrition.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/cf-monterrey.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/oum.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/atlesia.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/la-mementisa.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/hiiver.png" alt="" loading="lazy"></span>
+      <span class="ticker-logo"><img src="logos/aereo.png" alt="" loading="lazy"></span>
+      <span class="ticker-otros">entre otros</span>
     </div>
-  </div>
-
-  <!-- LOGOS -->
-  <div class="logos-grid fade-up">
-    <div class="logo-cell"><img src="logos/hyrox.png" alt="Hyrox" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/lululemon.png" alt="lululemon" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/saucony.png" alt="Saucony" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/optimum-nutrition.png" alt="Optimum Nutrition" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/cf-monterrey.png" alt="CF Monterrey" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/oum.png" alt="OUM" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/atlesia.png" alt="Atlesia" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/la-mementisa.png" alt="La Mementísa" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/hiiver.png" alt="Hiiver" loading="lazy"></div>
-    <div class="logo-cell"><img src="logos/aereo.png" alt="Aéreo" loading="lazy"></div>
   </div>
 
   <!-- Athletes — OCULTO por ahora. Para reactivar, borra la línea de abajo "ATLETAS_INICIO" y la de "ATLETAS_FIN" -->
@@ -1270,7 +1208,7 @@
     cursor.style.top = e.clientY + 'px';
   });
 
-  document.querySelectorAll('a, button, .video-item, .video-featured-media, .foto-item, .logo-cell, .athlete-card').forEach(el => {
+  document.querySelectorAll('a, button, .video-item, .video-featured-media, .foto-item, .ticker-logo, .athlete-card').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
   });
